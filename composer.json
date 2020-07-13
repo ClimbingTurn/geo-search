@@ -31,7 +31,7 @@
     },
     "autoload": {
         "psr-4": {
-          "climbingturn\\geosearch\\": "src/"
+          "ClimbingTurn\\GeoSearch\\": "src/"
         }
     },
     "extra": {
@@ -39,7 +39,7 @@
         "handle": "geo-search",
         "developer": "ClimbingTurn",
         "developerUrl": "https://www.climbingturn.co.uk",
-        "class": "climbingturn\\geosearch\\GeoSearch"
+        "class": "ClimbingTurn\\GeoSearch\\GeoSearchPlugin"
         }
     }
 

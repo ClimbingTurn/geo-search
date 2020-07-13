@@ -38,7 +38,7 @@ use yii\base\Event;
  * @since     2.0.0
  *
  */
-class GeoSearch extends Plugin
+class GeoSearchPlugin extends Plugin
 {
     // Static Properties
     // =========================================================================
