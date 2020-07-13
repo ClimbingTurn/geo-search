@@ -1,0 +1,45 @@
+{
+    "name": "climbingturn/geo-search",
+    "description": "Geo Location Search",
+    "type": "craft-plugin",
+    "version": "2.0.0",
+    "keywords": [
+        "craft",
+        "cms",
+        "craftcms",
+        "craft-plugin",
+        "geosearch",
+        "Geo Location Search"
+    ],
+    "support": {
+        "email": "enquiries@climbingturn.co.uk"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "ClimbingTurn",
+            "homepage": "https://www.climbingturn.co.uk"
+        }
+    ],
+    "require": {
+        "craftcms/cms": "^3.0.0"
+    },
+    "require-dev": {
+      "craftcms/cms": "^3.2.0",
+      "codeception/codeception": "^3.0",
+      "vlucas/phpdotenv": "^3.0"
+    },
+    "autoload": {
+        "psr-4": {
+          "climbingturn\\geosearch\\": "src/"
+        }
+    },
+    "extra": {
+        "name": "GeoSearch",
+        "handle": "geo-search",
+        "developer": "ClimbingTurn",
+        "developerUrl": "https://www.climbingturn.co.uk",
+        "class": "climbingturn\\geosearch\\GeoSearch"
+        }
+    }
+
