@@ -1,0 +1,70 @@
+{% import "_includes/forms" as forms %}
+
+<h1>Can you see me?</h1>
+
+{{ forms.textField({
+
+    label: "Search Radius"|t,
+    instructions: "The maximum search area from the location the user enters [in miles]."|t,
+    name: 'searchRadius',
+    value: settings.searchRadius
+
+})}}
+
+{{ forms.textField({
+
+   label: "Region Bias"|t,
+   instructions: "A country code top level domain code to influence the geo coding service to return results biased to a particular region."|t,
+   name: 'regionBias',
+   value: settings.regionBias
+
+})}}
+
+{{ forms.textField({
+
+   label: "Developments Section"|t,
+   instructions: "The Craft section to search for developments."|t,
+   name: 'developmentsSection',
+   value: settings.developmentsSection
+
+})}}
+
+
+{{ forms.textField({
+
+   label: "Plots Section"|t,
+   instructions: "The Craft section to search for matching plots."|t,
+   name: 'plotsSection',
+   value: settings.plotsSection
+
+})}}
+
+
+{{ forms.textField({
+
+   label: "Results Template"|t,
+   instructions: "The template used to display the search results."|t,
+   name: 'resultsTemplate',
+   value: settings.resultsTemplate
+
+})}}
+
+
+{{ forms.textField({
+
+   label: "Google Maps API Key"|t,
+   instructions: "Your Google Maps API key."|t,
+   name: 'googleAPIKey',
+   value: settings.googleAPIKey
+
+})}}
+
+
+{{ forms.lightswitchField ({
+
+   label: "Enable SSL"|t,
+   instructions: "Switch this on if the web site is using SSL."|t,
+   name: 'enableLocalSSL',
+   on: settings.enableLocalSSL
+
+})}}

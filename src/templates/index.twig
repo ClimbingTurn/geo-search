@@ -1,46 +1,28 @@
-{# @var craft \craft\web\twig\variables\CraftVariable #}
-{#
-/**
- * GeoSearch plugin for Craft CMS 3.x
- *
- * GeoSearch index.twig
- *
- * @author    ClimbingTurn
- * @copyright Copyright (c) 2020 ClimbingTurn
- * @link      https://www.climbingturn.co.uk
- * @package   GeoSearch
- * @since     2.0.0
- */
-#}
-
 {% extends "_layouts/cp" %}
-{% import "_includes/forms" as forms %}
 
-{% do view.registerAssetBundle("climbingturn\\geosearch\\assetbundles\\geosearch\\GeoSearchAsset") %}
-{% do view.registerAssetBundle("climbingturn\\geosearch\\assetbundles\\indexcpsection\\IndexCPSectionAsset") %}
+{% set title = "Geo Location Search" %}
 
-{# Link for the ? icon at the bottom of the page #}
-{% set docsUrl = "???" %}
 
-{# The title of this CP section #}
-{% set title = "GeoSearch" %}
+{% block content %}
 
-{# The URL to this plugin's base CP section #}
-{% set pluginCpUrl = url('geo-search') %}
+    <h2>Settings Summary</h2>
 
-{# Get a URL to an image in our AssetBundle #}
-{% set iconUrl = view.getAssetManager().getPublishedUrl('@climbingturn/geosearch/assetbundles/indexcpsection/dist', true) ~ '/img/Index-icon.svg' %}
+    <p>Changes can be made to these settings from Craft's Settings menu.</p>
 
-{# Content that should appear in the page header#}
-{% set extraPageHeaderHtml %}
-    <div class="buttons">
-        <a href="{{ pluginCpUrl }}" class="btn submit add icon">{{ "Click Me!"|t('geo-search') }}</a>
+    <div>
+        <p>Search radius: <strong>{{ craft.geoSearch.searchRadius }}</strong> miles.</p>
+        <p>Results template: <strong>{{ craft.geoSearch.resultsTemplate }}</strong>.</p>
+        <p>Google Maps API key: <strong>{{ craft.geoSearch.googleAPIKey }}</strong>.</p>
+        <p>Developments Section: <strong>{{ craft.geoSearch.developmentsSection }}</strong>.</p>
+        <p>Plots Section: <strong>{{ craft.geoSearch.plotsSection }}</strong>.</p>
+        <p>Require Local SSL: <strong>
+            {% if craft.geoSearch.enableLocalSSL == false %}
+                <i style="color:red">NO</i>
+            {% else %}
+                <i style="color:green">YES</i>
+            {% endif %}
+        </strong>.</p>
     </div>
-{% endset %}
+    
 
-{# The content of the CP Section#}
-{% set content %}
-    <h2>{{ "Index CP Section body goes here"|t('geo-search') }}</h2>
-    <img src="{{ iconUrl }}" height="64" width="64" />
-    <p class="textline"></p>
-{% endset %}
+{% endblock %}

@@ -171,9 +171,17 @@ class GeoSearchPlugin extends Plugin
 
 
     protected function settingsHtml()
-    {
+    {      
         return \Craft::$app->getView()->renderTemplate('geo-search/settings', [
             'settings' => $this->getSettings()
         ]);
-    }    
+    }   
+    
+    
+    // public function getSettings() 
+    // {
+    //     $settings = $this->getSettings();
+    //     return parent::getSettings();
+
+    // }
 }
