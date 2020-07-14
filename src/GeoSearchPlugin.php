@@ -10,8 +10,8 @@
 
 namespace ClimbingTurn\GeoSearch;
 
-use Climbingturn\GeoSearch\variables\GeoSearchVariable;
-use Climbingturn\GeoSearch;
+use ClimbingTurn\GeoSearch\Models;
+use Climbingturn\GeoSearch\Variables\GeoSearchVariable;
 
 use Craft;
 use craft\base\Plugin;
@@ -22,6 +22,8 @@ use craft\web\twig\variables\CraftVariable;
 use craft\events\RegisterUrlRulesEvent;
 
 use yii\base\Event;
+
+require __DIR__ . "/variables/GeoSearchVariable.php";
 
 /**
  * Craft plugins are very much like little applications in and of themselves. We’ve made
@@ -162,6 +164,7 @@ class GeoSearchPlugin extends Plugin
         );
     }
 
+
     // Protected Methods
     // =========================================================================
     protected function createSettingsModel()
@@ -171,17 +174,11 @@ class GeoSearchPlugin extends Plugin
 
 
     protected function settingsHtml()
-    {      
+    {
         return \Craft::$app->getView()->renderTemplate('geo-search/settings', [
             'settings' => $this->getSettings()
         ]);
     }   
     
     
-    // public function getSettings() 
-    // {
-    //     $settings = $this->getSettings();
-    //     return parent::getSettings();
-
-    // }
 }

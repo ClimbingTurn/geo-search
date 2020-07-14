@@ -37,6 +37,8 @@
     "extra": {
         "name": "GeoSearch",
         "handle": "geo-search",
+        "hasCpSettings": true,
+        "hasCpSection": true,
         "developer": "ClimbingTurn",
         "developerUrl": "https://www.climbingturn.co.uk",
         "class": "ClimbingTurn\\GeoSearch\\GeoSearchPlugin"
