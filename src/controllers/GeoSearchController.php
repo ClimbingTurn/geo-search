@@ -8,7 +8,7 @@
  * @copyright Copyright (c) 2020 ClimbingTurn
  */
 
-namespace Climbingturn\GeoSearch\Controllers;
+namespace climbingturn\geosearch\controllers;
 
 use climbingturn\geosearch\controllers;
 

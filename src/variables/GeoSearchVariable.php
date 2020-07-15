@@ -11,7 +11,7 @@
 namespace climbingturn\geosearch\variables;
 
 use Craft;
-use Climbingturn\GeoSearch\GeoSearchPlugin;
+use climbingturn\geosearch\GeoSearchPlugin;
 
 /**
  * GeoSearch Variable
