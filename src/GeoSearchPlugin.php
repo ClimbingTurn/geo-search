@@ -113,7 +113,9 @@ class GeoSearchPlugin extends Plugin
             UrlManager::class,
             UrlManager::EVENT_REGISTER_SITE_URL_RULES,
             function (RegisterUrlRulesEvent $event) {
-                $event->rules['geo-search/search'] = 'geo-search/geo-search-controller/actionSearch';
+                /* route is plugin-handle/controller class name with controller part removed and kebab cased/function name with action bit removed */
+                $event->rules['geo-search/search'] = 'geo-search/geo-search/search';
+                $event->rules['geo-search'] = 'geo-search/geo-search/search';
             }
         );        
 

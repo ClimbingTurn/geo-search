@@ -79,4 +79,6 @@ class GeoSearchController extends Controller
 
         $this->renderTemplate('availability/index', array('developmentResults' => $developments, 'searchParams' => $params));       
     }
+
+
 }
