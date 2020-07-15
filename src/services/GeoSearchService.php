@@ -1,6 +1,6 @@
 <?php
 
-namespace Craft;
+namespace climbingturn\geosearch\services;
 
 class GeoSearchService extends BaseApplicationComponent {
     

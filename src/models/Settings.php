@@ -1,6 +1,6 @@
 <?php
 
-namespace ClimbingTurn\GeoSearch\Models;
+namespace climbingturn\geosearch\models;
 
 use craft;
 use craft\base\Model;

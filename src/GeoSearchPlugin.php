@@ -8,11 +8,11 @@
  * @copyright Copyright (c) 2020 ClimbingTurn
  */
 
-namespace ClimbingTurn\GeoSearch;
+namespace climbingturn\geosearch;
 
-use ClimbingTurn\GeoSearch\Models;
-use Climbingturn\GeoSearch\Variables\GeoSearchVariable;
-use Climbingturn\GeoSearch\Controllers\GeoSearchController;
+use climbingturn\geosearch\models\Settings;
+use climbingturn\geosearch\variables\GeoSearchVariable;
+use climbingturn\geosearch\controllers\GeoSearchController;
 
 use Craft;
 use craft\base\Plugin;
@@ -178,7 +178,7 @@ class GeoSearchPlugin extends Plugin
     // =========================================================================
     protected function createSettingsModel()
     {
-        return new Models\Settings();
+        return new Settings();
     }
 
 

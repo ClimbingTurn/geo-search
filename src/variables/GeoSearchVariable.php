@@ -8,7 +8,7 @@
  * @copyright Copyright (c) 2020 ClimbingTurn
  */
 
-namespace Climbingturn\GeoSearch\Variables;
+namespace climbingturn\geosearch\variables;
 
 use Craft;
 use Climbingturn\GeoSearch\GeoSearchPlugin;

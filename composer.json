@@ -31,7 +31,7 @@
     },
     "autoload": {
         "psr-4": {
-          "ClimbingTurn\\GeoSearch\\": "src/"
+          "climbingturn\\geosearch\\": "src/"
         }
     },
     "extra": {
@@ -41,7 +41,7 @@
         "hasCpSection": true,
         "developer": "ClimbingTurn",
         "developerUrl": "https://www.climbingturn.co.uk",
-        "class": "ClimbingTurn\\GeoSearch\\GeoSearchPlugin"
+        "class": "climbingturn\\geosearch\\geosearchplugin"
         }
     }
 
