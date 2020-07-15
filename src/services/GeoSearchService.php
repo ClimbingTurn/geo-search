@@ -2,7 +2,12 @@
 
 namespace climbingturn\geosearch\services;
 
-class GeoSearchService extends BaseApplicationComponent {
+use yii\base\Component;
+
+/**
+ * This is the class that makes the API calls
+ */
+class GeoSearchService extends Component {
     
 
 
@@ -16,7 +21,7 @@ class GeoSearchService extends BaseApplicationComponent {
 
     public function __construct()
     {
-        $this->settings = craft()->plugins->getPlugin('geoSearch')->getSettings();
+        $this->settings = craft()->plugins->getPlugin('geo-search')->getSettings();
     }
 
 

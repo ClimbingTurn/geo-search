@@ -108,17 +108,28 @@ class GeoSearchPlugin extends Plugin
         );
 
 
-        // Register our site routes
+
+        /**  
+         * Register our site routes
+         * ActionTrigger: is set in the general config of the website, the default is "actions"
+         * Controller: class name with controller part removed and kebab cased
+         * Function: name with action bit removed 
+         * All kebab cased 
+         * route is actionTrigger/plugin-handle/controller/function 
+        */
         Event::on(
             UrlManager::class,
             UrlManager::EVENT_REGISTER_SITE_URL_RULES,
             function (RegisterUrlRulesEvent $event) {
-                /* route is plugin-handle/controller class name with controller part removed and kebab cased/function name with action bit removed */
+                Craft::debug(
+                    'UrlManager::EVENT_REGISTER_SITE_URL_RULES',
+                    __METHOD__
+                );
                 $event->rules['geo-search/search'] = 'geo-search/geo-search/search';
-                $event->rules['geo-search'] = 'geo-search/geo-search/search';
             }
         );        
 
+        // curl -d "geo-search/geo-search/search" -X POST http://dev.wheatley/
 
 
 /**

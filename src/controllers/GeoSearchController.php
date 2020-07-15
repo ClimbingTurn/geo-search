@@ -13,6 +13,8 @@ namespace climbingturn\geosearch\controllers;
 use Craft;
 use craft\web\Controller;
 
+use climbingturn\geosearch\services\GeoSearchService;
+
 /**
  * GeoSearchController Controller
  *
@@ -54,7 +56,8 @@ class GeoSearchController extends Controller
     public function actionSearch()
     {
 
-        $request = craft()->request;
+        // echo "this is lovely";
+        $request = Craft::$app->request;
 
         if(!($location = $request->getRequiredParam('location', false)) == false) {
 
