@@ -12,6 +12,7 @@ namespace ClimbingTurn\GeoSearch;
 
 use ClimbingTurn\GeoSearch\Models;
 use Climbingturn\GeoSearch\Variables\GeoSearchVariable;
+use Climbingturn\GeoSearch\Controllers\GeoSearchController;
 
 use Craft;
 use craft\base\Plugin;
@@ -24,6 +25,7 @@ use craft\events\RegisterUrlRulesEvent;
 use yii\base\Event;
 
 require __DIR__ . "/variables/GeoSearchVariable.php";
+require __DIR__ . "/controllers/GeoSearchController.php";
 
 /**
  * Craft plugins are very much like little applications in and of themselves. We’ve made
@@ -96,23 +98,6 @@ class GeoSearchPlugin extends Plugin
         parent::init();
         self::$plugin = $this;
 
-        // Register our site routes
-        Event::on(
-            UrlManager::class,
-            UrlManager::EVENT_REGISTER_SITE_URL_RULES,
-            function (RegisterUrlRulesEvent $event) {
-                $event->rules['siteActionTrigger1'] = 'geo-search/geo-search-controller';
-            }
-        );
-
-        // Register our CP routes
-        Event::on(
-            UrlManager::class,
-            UrlManager::EVENT_REGISTER_CP_URL_RULES,
-            function (RegisterUrlRulesEvent $event) {
-                $event->rules['cpActionTrigger1'] = 'geo-search/geo-search-controller/do-something';
-            }
-        );
 
         // Register our variables
         Event::on(
@@ -125,16 +110,17 @@ class GeoSearchPlugin extends Plugin
             }
         );
 
-        // Do something after we're installed
+
+        // Register our site routes
         Event::on(
-            Plugins::class,
-            Plugins::EVENT_AFTER_INSTALL_PLUGIN,
-            function (PluginEvent $event) {
-                if ($event->plugin === $this) {
-                    // We were just installed
-                }
+            UrlManager::class,
+            UrlManager::EVENT_REGISTER_SITE_URL_RULES,
+            function (RegisterUrlRulesEvent $event) {
+                $event->rules['geo-search/search'] = 'geo-search/geo-search-controller/actionSearch';
             }
-        );
+        );        
+
+
 
 /**
  * Logging in Craft involves using one of the following methods:
@@ -164,6 +150,29 @@ class GeoSearchPlugin extends Plugin
         );
     }
 
+    private function unUsedInit()
+    {
+        // Do something after we're installed
+        Event::on(
+            Plugins::class,
+            Plugins::EVENT_AFTER_INSTALL_PLUGIN,
+            function (PluginEvent $event) {
+                if ($event->plugin === $this) {
+                    // We were just installed
+                }
+            }
+        );
+
+        // Register our CP routes
+        Event::on(
+            UrlManager::class,
+            UrlManager::EVENT_REGISTER_CP_URL_RULES,
+            function (RegisterUrlRulesEvent $event) {
+                $event->rules['cpActionTrigger1'] = 'geo-search/geo-search-controller/do-something';
+            }
+        );
+    }    
+
 
     // Protected Methods
     // =========================================================================
@@ -179,6 +188,12 @@ class GeoSearchPlugin extends Plugin
             'settings' => $this->getSettings()
         ]);
     }   
+
+
+    public function getInputHtml($value, ElementInterface $element = null)
+    {
+        die("here i am!");
+    }
     
     
 }
