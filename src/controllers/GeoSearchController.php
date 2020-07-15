@@ -10,8 +10,6 @@
 
 namespace climbingturn\geosearch\controllers;
 
-use climbingturn\geosearch\controllers;
-
 use Craft;
 use craft\web\Controller;
 

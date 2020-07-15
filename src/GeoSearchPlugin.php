@@ -24,9 +24,6 @@ use craft\events\RegisterUrlRulesEvent;
 
 use yii\base\Event;
 
-require __DIR__ . "/variables/GeoSearchVariable.php";
-require __DIR__ . "/controllers/GeoSearchController.php";
-
 /**
  * Craft plugins are very much like little applications in and of themselves. We’ve made
  * it as simple as we can, but the training wheels are off. A little prior knowledge is

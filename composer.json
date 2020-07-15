@@ -41,7 +41,7 @@
         "hasCpSection": true,
         "developer": "ClimbingTurn",
         "developerUrl": "https://www.climbingturn.co.uk",
-        "class": "climbingturn\\geosearch\\geosearchplugin"
+        "class": "climbingturn\\geosearch\\GeoSearchPlugin"
         }
     }
 

@@ -5,6 +5,9 @@ namespace climbingturn\geosearch\models;
 use craft;
 use craft\base\Model;
 
+/**
+ * This is the settings for the plug-in
+ */
 class Settings extends Model
 {
     public $searchRadius = "default";
