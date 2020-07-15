@@ -129,8 +129,6 @@ class GeoSearchPlugin extends Plugin
             }
         );        
 
-        // curl -d "geo-search/geo-search/search" -X POST http://dev.wheatley/
-
 
 /**
  * Logging in Craft involves using one of the following methods:

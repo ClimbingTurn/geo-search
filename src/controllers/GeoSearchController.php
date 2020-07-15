@@ -80,8 +80,8 @@ class GeoSearchController extends Controller
             $developments = "";
         }
 
+
         $this->renderTemplate('availability/index', array('developmentResults' => $developments, 'searchParams' => $params));       
     }
-
 
 }
